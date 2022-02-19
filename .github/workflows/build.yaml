@@ -27,6 +27,7 @@ jobs:
 
       - name: Build docker image
         run: |
+          echo 'docker build start'
           docker buildx build \
           -t go-github-actions-cache:${GITHUB_SHA} \
           --cache-from type=local,src=/tmp/.buildx-cache \
