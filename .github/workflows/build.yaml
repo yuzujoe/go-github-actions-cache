@@ -28,8 +28,7 @@ jobs:
       - name: Build docker image
         run: |
           docker buildx build \
-          -t ${SERVICE_NAME}:${GITHUB_SHA} \
-          --build-arg HOGE=FOO \
+          -t go-github-actions-cache:${GITHUB_SHA} \
           --cache-from type=local,src=/tmp/.buildx-cache \
           --cache-to type=local,dest=/tmp/.buildx-cache-new,mode=max \
           --load ./
