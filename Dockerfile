@@ -7,4 +7,4 @@ RUN go mod download
 
 COPY . /go/src/app
 
-RUN CGO_ENABLED=0 go build -o app -a -tags netgo -installsuffix netgo ./app
+RUN CGO_ENABLED=0 go build -o app -a -tags netgo -installsuffix netgo
